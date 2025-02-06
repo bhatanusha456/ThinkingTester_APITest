@@ -1,0 +1,10 @@
+{
+    "user": {
+        "_id": "66bc4e5b21bd3b0013d31d1f",
+        "firstName": "test",
+        "lastName": "test",
+        "email": "testapi_01@mail.com",
+        "__v": 80
+    },
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmJjNGU1YjIxYmQzYjAwMTNkMzFkMWYiLCJpYXQiOjE3Mzg3NjgwMzd9.UQ1s6HfFYdavEd0nQS4dTGs0FxECeXxtZcpiU9YyUh0"
+}

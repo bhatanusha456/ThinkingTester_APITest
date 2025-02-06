@@ -12,7 +12,7 @@ public class Property {
     {
         try {
             property=new Properties();
-            file = new FileInputStream("/Volumes/Data/Automation/Diff Frameworks/Page Object Modal/RestAssuredProject/src/main/resources/Config.properties");
+            file = new FileInputStream("/Volumes/Data/Automation/Diff_Frameworks/PageObjectModal/RestAssuredProject/src/main/resources/Config.properties");
             property.load(file);
             //System.out.println(property.getProperty("baseURL"));
         } catch (FileNotFoundException e) {
