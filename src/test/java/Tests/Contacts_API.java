@@ -98,12 +98,18 @@ String ContactList = "src/main/java/JsonResponse/ContactLists.json";
     }
 
     @Test
-    void create_delete_Contact(){
+    void create_delete_Contact() throws IOException {
         path="token";
 
         Response response = given()
                 .spec(requests())
                 .basePath(config.property.getProperty("basePath_Contacts"))
-                .
+                .header("Authorization","Bearer "+jsonfile.readJsonFile(file,path))
+                .when()
+                .delete(jsonfile.readJsonFile(config.property.getProperty("Update_Contact_Document"),"user._id[2]"));
+
+        response.then()
+                .log().all()
+                .statusCode(200);
     }
 }
