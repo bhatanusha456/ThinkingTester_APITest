@@ -106,4 +106,35 @@ public class Users_API_Test extends BaseTest {
                 .log().all()
                 .statusCode(400);
     }
+
+    @Test
+    void create_Logout_Post_request() throws IOException {
+        path ="token";
+        createPost_Login();
+        Response response = given()
+                .spec(requests())
+                .basePath(config.property.getProperty("Logout"))
+                .header("Authorization","Bearer "+jsonfile.readJsonFile(file1,path))
+                .when()
+                .post();
+
+        response.then()
+                .statusCode(200)
+                .log().all();
+    }
+
+    @Test
+    void create_delete_user() throws IOException {
+        path="token";
+        Response response = given()
+                .spec(requests())
+                .basePath(config.property.getProperty("UserProfile"))
+                .header("Authorization","Bearer "+jsonfile.readJsonFile(file1,path))
+                .when()
+                .delete();
+
+        response.then()
+                .log().all()
+                .statusCode(200);
+    }
 }

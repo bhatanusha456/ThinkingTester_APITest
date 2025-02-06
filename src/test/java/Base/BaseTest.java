@@ -17,6 +17,7 @@ import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
 
+
 public class BaseTest {
   Property config= new Property();
     RequestSpecification requestSpec ;
