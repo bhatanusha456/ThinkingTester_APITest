@@ -8,6 +8,7 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
+
 public class BaseTest {
   Property config= new Property();
     RequestSpecification requestSpec ;
@@ -30,4 +31,20 @@ public class BaseTest {
               .build();
         return responseSpec;
     }
+
+  /* public String getBearerToken() throws IOException {
+      // Read JSON file as String
+      String content = new String(Files.readAllBytes(Paths.get(config.property.getProperty("LoginUser_Json"))));
+      // Convert string to JSONObject
+      JSONObject requestBody = new JSONObject(content);
+      Response response = given()
+              .spec(requests())
+              .basePath(config.property.getProperty("basePath_Users"))
+              .body(requestBody.toString())
+              .when()
+              .post(config.property.getProperty("Login"));
+      JsonPath jsonConfig = response.jsonPath();
+      bearerToken = jsonConfig.getString("token");
+      return bearerToken;
+    }*/
 }
